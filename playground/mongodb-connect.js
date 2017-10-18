@@ -25,18 +25,18 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (error,db) => {
     //     console.log(JSON.stringify(result.ops, undefined, 2));
     // });
 
-    // db.collection('Users').insertOne({
-    //     name : 'Adil Chowdhury',
-    //     age : 23,
-    //     location : 'Sylhet',
-    // }, (error,result) => {
-    //     if(error) 
-    //     {
-    //         return console.log('Unable to insert user info', error);
-    //     }
-    //     console.log(JSON.stringify(result.ops, undefined, 2));
-    //     console.log(result.ops[0]._id.getTimestamp());
-    // });
+    db.collection('Users').insertOne({
+        name : 'Adil Chowdhury',
+        age : 23,
+        location : 'Sylhet',
+    }, (error,result) => {
+        if(error) 
+        {
+            return console.log('Unable to insert user info', error);
+        }
+        console.log(JSON.stringify(result.ops, undefined, 2));
+        console.log(result.ops[0]._id.getTimestamp());
+    });
 
     db.close();
 });
